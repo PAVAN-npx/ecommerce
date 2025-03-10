@@ -21,13 +21,16 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://thunderous-lily-79af2e.netlify.app', // ✅ Allow frontend
+  credentials: true // ✅ Allow cookies
+}));
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const __dirname = path.resolve(); // Set {__dirname} to current working directory
+const __dirname = 'https://ecommerce-twdl.onrender.com';
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/v1/products', productRoutes);
