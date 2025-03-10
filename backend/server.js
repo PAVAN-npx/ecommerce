@@ -26,7 +26,7 @@ const app = express();
 // ✅ Declare an array of allowed origins
 const allowedOrigins = [
   'http://localhost:3000', 
-  'https://thunderous-lily-79af2e.netlify.app'
+  'https://fastidious-meringue-27a444.netlify.app'
 ];
 
 app.use(cors({
