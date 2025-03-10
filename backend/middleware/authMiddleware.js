@@ -5,15 +5,13 @@ import jwt from 'jsonwebtoken';
 const protect = async (req, res, next) => {
   try {
     const token = req.cookies.jwt;
-    console.log(token)
+
     if (!token) {
       res.statusCode = 401;
-      
       throw new Error('Authentication failed: Token not provided.');
     }
 
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-    console.log(decodedToken)
 
     if (!decodedToken) {
       res.statusCode = 401;
