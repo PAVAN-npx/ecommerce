@@ -21,10 +21,25 @@ connectDB();
 
 const app = express();
 
+
+
+// ✅ Declare an array of allowed origins
+const allowedOrigins = [
+  'http://localhost:3000', 
+  'https://thunderous-lily-79af2e.netlify.app'
+];
+
 app.use(cors({
-  origin: 'https://thunderous-lily-79af2e.netlify.app', // ✅ Allow frontend
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true // ✅ Allow cookies
 }));
+
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
