@@ -21,25 +21,13 @@ connectDB();
 
 const app = express();
 
-
-
-// ✅ Declare an array of allowed origins
-const allowedOrigins = [
-  'http://localhost:3000', 
-  'https://ecommerce-pi-sooty-55.vercel.app'
-];
-
-app.use(cors({
-  origin: 'http://localhost:3000', // Allow only frontend origin
-  credentials: true // Allow cookies & authorization headers
-}));
-
+app.use(cors());
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const __dirname = 'https://ecommerce-twdl.onrender.com';
+const __dirname = path.resolve(); // Set {__dirname} to current working directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/v1/products', productRoutes);

@@ -7,8 +7,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: data => ({
         url: `${USERS_URL}/login`,
         method: 'POST',
-        body: data,
-        credentials: 'include'
+        body: data
       }),
       invalidatesTags: ['User']
     }),
