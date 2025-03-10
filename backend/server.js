@@ -29,7 +29,10 @@ const allowedOrigins = [
   'https://ecommerce-pi-sooty-55.vercel.app'
 ];
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow only frontend origin
+  credentials: true // Allow cookies & authorization headers
+}));
 
 app.use(compression());
 app.use(cookieParser());
