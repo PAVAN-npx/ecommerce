@@ -27,7 +27,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const __dirname = path.resolve(); // Set {__dirname} to current working directory
+// const __dirname = path.resolve(); 
+const __dirname = 'https://ecommerce-twdl.onrender.com';
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/v1/products', productRoutes);
