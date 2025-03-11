@@ -28,7 +28,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // const __dirname = path.resolve(); 
-const __dirname = 'https://ecommerce-twdl.onrender.com';
+const __dirname = 'https://raw.githubusercontent.com/PAVAN-npx/ecommerce/main';
+';
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/v1/products', productRoutes);
