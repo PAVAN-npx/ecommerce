@@ -21,10 +21,7 @@ connectDB();
 
 const app = express();
 
-app.use(cors({
-  origin: 'http://localhost:3000', // Replace with your frontend Render URL
-  credentials: true // Allow cookies
-}));
+app.use(cors());
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
