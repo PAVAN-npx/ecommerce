@@ -8,7 +8,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/login`,
         method: 'POST',
         body: data,
-        credentials: 'include' // Ensure cookies are sent
+        // Ensure cookies are sent
       }),
       invalidatesTags: ['User']
     }),
@@ -16,7 +16,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: () => ({
         url: `${USERS_URL}/logout`,
         method: 'POST',
-        credentials: 'include'
+        
       }),
       invalidatesTags: ['User']
     }),
@@ -25,7 +25,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}`,
         method: 'POST',
         body: data,
-        credentials: 'include'
+      
       }),
       invalidatesTags: ['User']
     }),
@@ -34,7 +34,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/reset-password/request`,
         method: 'POST',
         body: data,
-        credentials: 'include'
+       
       }),
       invalidatesTags: ['User']
     }),
@@ -43,7 +43,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/reset-password/reset/${userId}/${token}`,
         method: 'POST',
         body: { password },
-        credentials: 'include'
+     
       }),
       invalidatesTags: ['User']
     }),
@@ -52,35 +52,35 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/profile`,
         method: 'PUT',
         body: data,
-        credentials: 'include'
+    
       }),
       invalidatesTags: ['User']
     }),
     getUserProfile: builder.query({
       query: async () => ({
         url: `${USERS_URL}/profile`,
-        credentials: 'include'
+        
       }),
       providesTags: ['User']
     }),
     getUsers: builder.query({
       query: () => ({
         url: USERS_URL,
-        credentials: 'include'
+
       }),
       providesTags: ['User']
     }),
     admins: builder.query({
       query: () => ({
         url: `${USERS_URL}/admins`,
-        credentials: 'include'
+        
       }),
       providesTags: ['User']
     }),
     getUserById: builder.query({
       query: userId => ({
         url: `${USERS_URL}/${userId}`,
-        credentials: 'include'
+  
       }),
       providesTags: ['User']
     }),
@@ -88,7 +88,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
       query: userId => ({
         url: `${USERS_URL}/${userId}`,
         method: 'DELETE',
-        credentials: 'include'
+      
       }),
       invalidatesTags: ['User']
     }),
@@ -97,7 +97,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
         url: `${USERS_URL}/${userId}`,
         method: 'PUT',
         body: { ...userData },
-        credentials: 'include'
+      
       }),
       invalidatesTags: ['User']
     })
