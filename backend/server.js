@@ -21,7 +21,10 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://ecommerce-1-4apy.onrender.com", // Replace with your frontend Render URL
+  credentials: true // Allow cookies
+}));
 app.use(compression());
 app.use(cookieParser());
 app.use(express.json());
