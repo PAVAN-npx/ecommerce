@@ -22,7 +22,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: '*', // Replace with your frontend Render URL
+  origin: 'https://ecommerce-1-4apy.onrender.com', // Replace with your frontend Render URL
   credentials: true // Allow cookies
 }));
 app.use(compression());
