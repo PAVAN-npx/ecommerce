@@ -22,7 +22,7 @@ connectDB();
 const app = express();
 
 app.use(cors({
-  origin: 'https://ecommerce-jb9x.vercel.app', // Replace with your frontend Render URL
+  origin: 'http://localhost:3000', // Replace with your frontend Render URL
   credentials: true // Allow cookies
 }));
 app.use(compression());
