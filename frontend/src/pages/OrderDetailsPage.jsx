@@ -42,7 +42,7 @@ const OrderDetailsPage = () => {
         receipt: `receipt#${orderId}`
       };
       const { data } = await axios.post(
-        'https://ecommerce-twdl.onrender.com/api/v1/payment/razorpay/order',
+        '/api/v1/payment/razorpay/order',
         razorpayData
       );
 
@@ -59,7 +59,7 @@ const OrderDetailsPage = () => {
         handler: async response => {
           try {
             const { data } = await axios.post(
-              `https://ecommerce-twdl.onrender.com/api/v1/payment/razorpay/order/validate`,
+              `/api/v1/payment/razorpay/order/validate`,
               response
             );
             const details = { ...data, email: order?.user?.email };
