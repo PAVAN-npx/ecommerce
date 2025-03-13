@@ -272,7 +272,7 @@ const resetPasswordRequest = async (req, res, next) => {
     const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
       expiresIn: '15m'
     });
-    const passwordResetLink = `https://ecommerce-1-4apy.onrender.com/reset-password/${user._id}/${token}`;
+    const passwordResetLink = `https://ecommerce-pi-sooty-55.vercel.app/reset-password/${user._id}/${token}`;
     console.log(passwordResetLink);
     await transporter.sendMail({
       from: `"MERN Shop" ${process.env.EMAIL_FROM}`, // sender address
@@ -282,7 +282,11 @@ const resetPasswordRequest = async (req, res, next) => {
 
             <p>We received a password reset request for your account. Click the link below to set a new password:</p>
 
-            <p><a href=${passwordResetLink} target="_blank">${passwordResetLink}</a></p>
+            <p><a href=${passwordResetLink} target="_blank">
+            
+             <button style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px;" onclick="sendResetLink()">Reset Password</button>
+            
+            </a></p>
 
             <p>If you didn't request this, you can ignore this email.</p>
 
