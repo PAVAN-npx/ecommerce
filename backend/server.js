@@ -25,7 +25,8 @@ const app = express();
 
 const allowedOrigins = [
   'http://localhost:3000', 
-  'https://ecommerce-1-4apy.onrender.com'
+  'https://ecommerce-1-4apy.onrender.com',
+  'https://ecommerce-pi-sooty-55.vercel.app'
 ];
 
 app.use(cors({
